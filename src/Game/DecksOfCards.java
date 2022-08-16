@@ -20,13 +20,19 @@ class Card {
 	public Card() {
 		setValue('A');
 		setSuit(Suit.spades);
-		setErrorFlag('A', Suit.spades);
+		errorFlag = isValid('A', Suit.spades);
+	}
+	
+	public Card(Card original) {
+		setValue(original.value);
+		setSuit(original.suit);
+		errorFlag = isValid(original.value, original.suit);
 	}
 	
 	public Card(char value, Suit suit) {
 		setValue(value);
 		setSuit(suit);
-		setErrorFlag(value, suit);
+		errorFlag = isValid(value, suit);
 	}
 	
 	public String toString() {
@@ -44,9 +50,6 @@ class Card {
 		this.suit = suit;
 	}
 	
-	private void setErrorFlag(char value, Suit suit) {
-		this.errorFlag = isValid(value, suit);
-	}
 	
 	private boolean isValid(char value, Suit suit) {
 		char[] cardValue = {'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'};
