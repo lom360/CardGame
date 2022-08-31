@@ -2,19 +2,12 @@ package Game;
 
 public class DecksOfCards {
 	public static void main(String[] args) {
-		Card card1 = new Card();
-		Card card2 = new Card('B', Card.Suit.clubs);
-		Card card3 = new Card('T', Card.Suit.hearts);
-		Card card4 = new Card(card3);
+		Card card1 = new Card('T', Card.Suit.hearts);
+		Card card2 = new Card('Z', Card.Suit.spades);
+		Card card3 = new Card('7', Card.Suit.diamonds);
 		System.out.println(card1);
 		System.out.println(card2);
 		System.out.println(card3);
-		System.out.println(card4);
-		char test = card4.getValue();
-		System.out.println(test);
-		test = 'A';
-		System.out.println(test);
-		System.out.println(card4.getValue());
 	}
 }
 
