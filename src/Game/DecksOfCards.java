@@ -17,18 +17,21 @@ class Card {
 	private Suit suit;
 	private boolean errorFlag;
 	
+    // Default Constructor
 	public Card() {
 		setValue('A');
 		setSuit(Suit.spades);
 		errorFlag = isValid('A', Suit.spades);
 	}
 	
+	// Clone Constructor
 	public Card(Card original) {
 		setValue(original.value);
 		setSuit(original.suit);
 		errorFlag = isValid(original.value, original.suit);
 	}
 	
+	// Constructor
 	public Card(char value, Suit suit) {
 		setValue(value);
 		setSuit(suit);
