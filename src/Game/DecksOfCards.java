@@ -5,9 +5,16 @@ public class DecksOfCards {
 		Card card1 = new Card();
 		Card card2 = new Card('B', Card.Suit.clubs);
 		Card card3 = new Card('T', Card.Suit.hearts);
+		Card card4 = new Card(card3);
 		System.out.println(card1);
 		System.out.println(card2);
 		System.out.println(card3);
+		System.out.println(card4);
+		char test = card4.getValue();
+		System.out.println(test);
+		test = 'A';
+		System.out.println(test);
+		System.out.println(card4.getValue());
 	}
 }
 
@@ -53,6 +60,9 @@ class Card {
 		this.suit = suit;
 	}
 	
+	public char getValue() {
+		return this.value;
+	}
 	
 	private boolean isValid(char value, Suit suit) {
 		char[] cardValue = {'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'};
